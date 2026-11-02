@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="معرض أعمال عبود حسن الدغمه — تصميم وتطوير مواقع إلكترونية وتجارب رقمية للمشاريع.">
+  <title>عبود حسن | معرض الأعمال</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark">ع</span><span>عبود<span class="brand-dot">.</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" class="active">الرئيسية</a><a href="#work">أعمالي</a><a href="#services">خدماتي</a><a href="#about">من أنا</a>
+      <a class="nav-contact" href="#contact">خلينا نشتغل سوا <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> مستقل · تصميم وتطوير رقمي</div>
+        <h1>أحوّل الأفكار إلى<br><span class="gradient-text">تجارب رقمية</span> مميزة.</h1>
+        <p class="hero-description">أصمّم مواقع إلكترونية وقوائم طعام رقمية وتجارب عرض تساعد المشاريع على الظهور بصورة احترافية أمام عملائها.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">استكشف أعمالي <span>↓</span></a>
+          <a class="button button-ghost" href="#contact">تواصل معي <span>↗</span></a>
+        </div>
+        <div class="hero-proof"><div class="proof-avatars"><span>W</span><span>م</span><span>✦</span></div><p>أفكار مختلفة، وتنفيذ يهتم بالتفاصيل.</p></div>
+      </div>
+      <div class="hero-art" aria-label="لوحة بصرية تجريبية لمعرض الأعمال">
+        <div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div>
+        <div class="floating-chip chip-top"><span class="chip-icon">✳</span><span><b>تصميم</b><small>هوية وتجربة بصرية</small></span></div>
+        <div class="showcase-window">
+          <div class="window-top"><div class="window-dots"><i></i><i></i><i></i></div><span>abood / creative space</span><span>↗</span></div>
+          <div class="window-content">
+            <div class="mini-label">DIGITAL EXPERIENCES</div>
+            <div class="mini-headline">Make it<br><em>memorable.</em></div>
+            <div class="mini-line"></div>
+            <div class="mini-cards"><div class="mini-card mini-card-one"><span>01</span><b>WEB<br>DESIGN</b></div><div class="mini-card mini-card-two"><span>02</span><b>DIGITAL<br>MENU</b></div><div class="mini-card mini-card-three"><span>03</span><b>BRAND<br>VISUALS</b></div></div>
+          </div>
+        </div>
+        <div class="floating-chip chip-bottom"><span class="sparkle">✦</span><span><b>كل تفصيلة إلها قيمة</b><small>تصميم واضح وتجربة أسهل</small></span></div>
+        <div class="hero-art-caption">مختبر الأفكار الرقمية <span>✦</span></div>
+      </div>
+      <a class="scroll-cue" href="#work"><span></span> انزل لاكتشاف الأعمال</a>
+    </section>
+
+    <section class="work-section section-wrap" id="work">
+      <div class="section-heading">
+        <div><div class="eyebrow">مختارات من المشاريع</div><h2>أعمال <span class="gradient-text">تحكي عنّي.</span></h2></div>
+        <p>نماذج من مواقع وقوائم رقمية عملت عليها. اختر التصنيف، واستكشف كل مشروع بنفسك.</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="تصفية المشاريع">
+        <button class="filter-btn active" data-filter="all">كل الأعمال <span>06</span></button>
+        <button class="filter-btn" data-filter="store">متاجر إلكترونية</button>
+        <button class="filter-btn" data-filter="menu">قوائم المطاعم</button>
+        <button class="filter-btn" data-filter="web">مواقع إلكترونية</button>
+      </div>
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card project-basha" data-category="store web">
+          <a class="project-visual visual-basha" href="https://aboodalda.github.io/albasha.phone/" target="_blank" rel="noopener" aria-label="فتح مشروع الباشا فون">
+            <div class="visual-glow"></div><div class="phone-device"><div class="phone-screen"><span class="phone-brand">EL BASHA</span><b>تقنية<br>تليق بك.</b><div class="phone-product"></div><small>SMARTPHONES · SERVICE</small></div></div>
+            <span class="visual-tag">E-COMMERCE</span><span class="visual-arrow">↗</span>
+          </a>
+          <div class="project-meta"><div><span class="project-type">متجر إلكتروني · هواتف وصيانة</span><h3>الباشا فون</h3></div><a class="project-link" href="https://aboodalda.github.io/albasha.phone/" target="_blank" rel="noopener" aria-label="مشاهدة الباشا فون">↗</a></div>
+          <p class="project-description">تجربة متجر للأجهزة والإكسسوارات وخدمات الصيانة، مع واجهة مناسبة للموبايل.</p>
+        </article>
+        <article class="project-card" data-category="menu web">
+          <a class="project-visual visual-sea" href="https://aboodalda.github.io/Al-Wajha/" target="_blank" rel="noopener" aria-label="فتح مشروع الواجهة البحرية">
+            <div class="sea-sun"></div><div class="sea-copy"><span>SEA VIEW DINING</span><b>الواجهة<br>البحرية</b><small>طعم البحر.. بإطلالة مختلفة</small></div><div class="sea-dish"><span></span></div><span class="visual-arrow">↗</span>
+          </a>
+          <div class="project-meta"><div><span class="project-type">قائمة طعام رقمية</span><h3>الواجهة البحرية</h3></div><a class="project-link" href="https://aboodalda.github.io/Al-Wajha/" target="_blank" rel="noopener" aria-label="مشاهدة الواجهة البحرية">↗</a></div>
+          <p class="project-description">قائمة رقمية بطابع بحري أنيق وتجربة تصفح مصممة للهواتف.</p>
+        </article>
+        <article class="project-card" data-category="menu web">
+          <a class="project-visual visual-bluewave" href="https://aboodalda.github.io/bluewave/#info" target="_blank" rel="noopener" aria-label="فتح مشروع الموج الأزرق">
+            <div class="wave wave-one"></div><div class="wave wave-two"></div><div class="bluewave-title"><span>BLUE WAVE</span><b>الموج<br>الأزرق</b><small>FRESH · SIMPLE · LOCAL</small></div><div class="bluewave-orb">BW</div><span class="visual-arrow">↗</span>
+          </a>
+          <div class="project-meta"><div><span class="project-type">قائمة طعام رقمية</span><h3>الموج الأزرق</h3></div><a class="project-link" href="https://aboodalda.github.io/bluewave/#info" target="_blank" rel="noopener" aria-label="مشاهدة الموج الأزرق">↗</a></div>
+          <p class="project-description">عرض إلكتروني للمطعم يسهّل الوصول إلى الأصناف والمعلومات.</p>
+        </article>
+        <article class="project-card" data-category="menu web">
+          <a class="project-visual visual-zaytouna" href="https://aboodalda.github.io/menu/" target="_blank" rel="noopener" aria-label="فتح مشروع كافتيريا الزيتونة">
+            <div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="zaytouna-copy"><span>CAFÉ · MENU</span><b>كافتيريا<br>الزيتونة</b><small>لحظات بسيطة.. بطعم أجمل</small></div><div class="zaytouna-seal">Z</div><span class="visual-arrow">↗</span>
+          </a>
+          <div class="project-meta"><div><span class="project-type">قائمة طعام رقمية</span><h3>كافتيريا الزيتونة</h3></div><a class="project-link" href="https://aboodalda.github.io/menu/" target="_blank" rel="noopener" aria-label="مشاهدة كافتيريا الزيتونة">↗</a></div>
+          <p class="project-description">قائمة إلكترونية تساعد الزبائن على تصفح الخيارات بسهولة.</p>
+        </article>
+        <article class="project-card" data-category="menu web">
+          <a class="project-visual visual-saloren" href="https://aboodalda.github.io/saloren-menu/" target="_blank" rel="noopener" aria-label="فتح مشروع سالورين">
+            <div class="saloren-frame"></div><div class="saloren-copy"><span>THE ART OF TASTE</span><b>سالورين</b><small>MENU & EXPERIENCE</small></div><div class="saloren-flower">✳</div><span class="visual-arrow">↗</span>
+          </a>
+          <div class="project-meta"><div><span class="project-type">قائمة مطعم رقمية</span><h3>سالورين</h3></div><a class="project-link" href="https://aboodalda.github.io/saloren-menu/" target="_blank" rel="noopener" aria-label="مشاهدة سالورين">↗</a></div>
+          <p class="project-description">تصميم هادئ يركّز على هوية المكان وسهولة عرض القائمة.</p>
+        </article>
+        <article class="project-card" data-category="menu web">
+          <a class="project-visual visual-cava" href="https://aboodalda.github.io/cava-top/#menu" target="_blank" rel="noopener" aria-label="فتح مشروع كافا توب">
+            <div class="cava-sun"></div><div class="cava-copy"><span>GOOD FOOD. GOOD MOOD.</span><b>CAVA<br><em>TOP</em></b><small>DISCOVER THE MENU</small></div><div class="cava-stamp">CT<br>✦</div><span class="visual-arrow">↗</span>
+          </a>
+          <div class="project-meta"><div><span class="project-type">قائمة طعام رقمية</span><h3>كافا توب</h3></div><a class="project-link" href="https://aboodalda.github.io/cava-top/#menu" target="_blank" rel="noopener" aria-label="مشاهدة كافا توب">↗</a></div>
+          <p class="project-description">واجهة عرض قائمة طعام بتصميم مميز وقابل للتصفح على مختلف الأجهزة.</p>
+        </article>
+      </div>
+      <div class="projects-note"><span>✦</span> هذه البداية — يمكن إضافة صورك الأصلية ودراسات حالة لكل مشروع لاحقاً.</div>
+    </section>
+
+    <section class="services-section section-wrap" id="services">
+      <div class="section-heading"><div><div class="eyebrow">كيف أقدر أساعدك؟</div><h2>خدمات مصممة <span class="gradient-text">لتترك أثراً.</span></h2></div><p>من الفكرة الأولى إلى تجربة جاهزة للمشاركة مع عملائك.</p></div>
+      <div class="services-grid">
+        <article class="service-card"><div class="service-icon">⌘</div><span class="service-number">01 / WEB</span><h3>تصميم وتطوير المواقع</h3><p>مواقع تعريفية وصفحات هبوط تعرض نشاطك بصورة واضحة واحترافية.</p><span class="service-arrow">↗</span></article>
+        <article class="service-card"><div class="service-icon">▦</div><span class="service-number">02 / MENU</span><h3>قوائم طعام رقمية</h3><p>قائمة سهلة الاستخدام يمكن لزبائنك فتحها من خلال رابط أو رمز QR.</p><span class="service-arrow">↗</span></article>
+        <article class="service-card"><div class="service-icon">✳</div><span class="service-number">03 / VISUALS</span><h3>تصميم بصري وإعلانات</h3><p>تصاميم رقمية تساعد علامتك التجارية على الظهور بهوية متناسقة.</p><span class="service-arrow">↗</span></article>
+      </div>
+    </section>
+
+    <section class="about-section section-wrap" id="about">
+      <div class="about-mark">ع<span>.</span></div>
+      <div class="about-copy"><div class="eyebrow">نبذة عنّي</div><h2>أهتم بالفكرة،<br><span class="gradient-text">وبكل تفصيلة بعدها.</span></h2><p>أنا عبود حسن، أعمل على تصميم وتطوير تجارب رقمية للمشاريع والأعمال. أؤمن أن الموقع الجيد لا يبدو جميلاً فقط، بل يجعل الوصول إلى المعلومة والتواصل مع النشاط أسهل.</p><div class="skill-pills"><span>Web Design</span><span>HTML / CSS / JS</span><span>Digital Menus</span><span>Graphic Design</span></div></div>
+    </section>
+
+    <section class="contact-section section-wrap" id="contact">
+      <div class="contact-panel"><div class="contact-glow"></div><div class="eyebrow"><span class="status-dot"></span> عندك فكرة؟ خلينا نحكي</div><h2>مشروعك القادم<br>ممكن يبدأ <span class="gradient-text">من هون.</span></h2><p>احكي لي عن مشروعك أو الخدمة التي تحتاجها، ونشوف كيف نحولها إلى تجربة رقمية مناسبة.</p><div class="contact-actions"><a class="button button-primary" href="https://wa.me/970592936150?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%B9%D8%A8%D9%88%D8%AF%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83." target="_blank" rel="noopener">راسلني على واتساب <span>↗</span></a><a class="button button-ghost" href="#work">ارجع للأعمال <span>↑</span></a></div><small class="contact-note">ملاحظة: رابط واتساب الحالي يستخدم رقم التواصل المزوّد لمشروع الباشا فون؛ غيّره إذا أردت رقماً شخصياً مختلفاً.</small></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-wrap"><a class="brand" href="#home"><span class="brand-mark">ع</span><span>عبود<span class="brand-dot">.</span></span></a><p>أفكار رقمية، تُنفّذ باهتمام.</p><span>© <span id="year"></span> عبود حسن الدغمه</span><a href="#home" class="back-top">للأعلى ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
