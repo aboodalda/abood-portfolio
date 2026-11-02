@@ -2,8 +2,46 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = [...document.querySelectorAll('.project-card')];
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
-const modal = document.getElementById('projectModal');
 let lastFocused = null;
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+const modal = el('div', 'project-modal');
+modal.id = 'projectModal';
+modal.setAttribute('aria-hidden', 'true');
+const backdrop = el('div', 'modal-backdrop');
+backdrop.dataset.modalClose = '';
+const dialog = el('section', 'modal-dialog');
+dialog.setAttribute('role', 'dialog');
+dialog.setAttribute('aria-modal', 'true');
+dialog.setAttribute('aria-labelledby', 'modalTitle');
+const closeButton = el('button', 'modal-close', '×');
+closeButton.type = 'button';
+closeButton.setAttribute('aria-label', 'إغلاق التفاصيل');
+closeButton.dataset.modalClose = '';
+const kicker = el('div', 'modal-kicker', 'PROJECT SPOTLIGHT ✦');
+const typeBox = el('div', 'modal-type');
+typeBox.id = 'modalType';
+const titleBox = el('h2');
+titleBox.id = 'modalTitle';
+const descriptionBox = el('p', 'modal-description');
+descriptionBox.id = 'modalDescription';
+const featuresBox = el('div', 'modal-features');
+const visitLink = el('a', 'button button-primary', 'زيارة المشروع ↗');
+visitLink.id = 'modalVisit';
+visitLink.target = '_blank';
+visitLink.rel = 'noopener';
+const contactLink = el('a', 'button button-ghost', 'ناقش مشروعاً مشابهاً ↗');
+contactLink.href = '#contact';
+const actions = el('div', 'modal-actions');
+actions.append(visitLink, contactLink);
+dialog.append(closeButton, kicker, typeBox, titleBox, descriptionBox, featuresBox, actions);
+modal.append(backdrop, dialog);
+document.body.append(modal);
 
 function openProject(card) {
   const title = card.querySelector('.project-meta h3')?.textContent?.trim() || 'مشروع رقمي';
@@ -15,35 +53,27 @@ function openProject(card) {
   if (categories.includes('store')) tags.push('متجر إلكتروني', 'تجربة تسوق');
   if (categories.includes('menu')) tags.push('قائمة رقمية', 'تصفح سهل');
   if (categories.includes('web')) tags.push('واجهة ويب', 'تصميم متجاوب');
-  document.getElementById('modalTitle').textContent = title;
-  document.getElementById('modalType').textContent = type;
-  document.getElementById('modalDescription').textContent = description;
-  const tagBox = document.getElementById('modalFeatures');
-  tagBox.replaceChildren();
-  [...new Set(tags)].forEach(label => {
-    const tag = document.createElement('span');
-    tag.textContent = label;
-    tagBox.append(tag);
-  });
-  document.getElementById('modalVisit').href = link;
+  titleBox.textContent = title;
+  typeBox.textContent = type;
+  descriptionBox.textContent = description;
+  featuresBox.replaceChildren();
+  [...new Set(tags)].forEach(label => featuresBox.append(el('span', '', label)));
+  visitLink.href = link;
   lastFocused = document.activeElement;
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
-  modal.querySelector('.modal-close')?.focus();
+  closeButton.focus();
 }
 function closeProject() {
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('modal-open');
-  lastFocused?.focus?.();
+  if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
 }
-
 projectCards.forEach(card => {
-  const button = document.createElement('button');
+  const button = el('button', 'project-details-btn', 'تفاصيل المشروع ↗');
   button.type = 'button';
-  button.className = 'project-details-btn';
-  button.textContent = 'تفاصيل المشروع ↗';
   button.addEventListener('click', () => openProject(card));
   card.append(button);
 });
@@ -60,10 +90,10 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
     card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
   });
 }));
-modal?.querySelectorAll('[data-modal-close]').forEach(item => item.addEventListener('click', closeProject));
-modal?.querySelector('[data-modal-contact]')?.addEventListener('click', closeProject);
+modal.querySelectorAll('[data-modal-close]').forEach(item => item.addEventListener('click', closeProject));
+contactLink.addEventListener('click', closeProject);
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && modal?.classList.contains('open')) closeProject();
+  if (event.key === 'Escape' && modal.classList.contains('open')) closeProject();
 });
 if (menuToggle && mainNav) {
   menuToggle.addEventListener('click', () => {
