@@ -12,6 +12,7 @@ function countUp(node,target){
     if(p<1) requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+  setTimeout(()=>{node.textContent=target.toLocaleString("en-US")+suffix;},1900);
 }
 function run(){
   const stats=[...document.querySelectorAll(".stat-number")];
