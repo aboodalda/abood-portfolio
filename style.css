@@ -148,3 +148,18 @@ main,.site-header,.section-wrap{min-width:0;max-width:100%}
 }
 
 .project-screenshot{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:top center;z-index:1;background:#10121b}.project-visual .visual-tag,.project-visual .visual-arrow{z-index:3}.project-basha .visual-tag{left:12px;right:auto}
+
+
+/* Animated statistics and refined motion */
+.stats-section{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:8px 0 76px}
+.stat-card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:25px 14px 22px;border:1px solid #a78bfa25;border-radius:17px;background:linear-gradient(145deg,#171321b8,#101019d9);transition:transform .35s,border-color .35s,box-shadow .35s}
+.stat-card:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:#8b5cf625;filter:blur(38px);top:-85px;right:calc(50% - 65px);transition:transform .5s}
+.stat-card:hover{transform:translateY(-7px);border-color:#a78bfa80;box-shadow:0 18px 45px #0005}
+.stat-icon{color:#c4b5fd;font-size:19px;margin-bottom:5px}
+.stat-number{font:700 clamp(34px,5vw,48px)/1.2 var(--font);letter-spacing:-1px;background:linear-gradient(100deg,#fff,#bba4ff);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.stat-label{font-size:13px;color:#eee9ff;margin-top:5px}.stat-card small{font-size:10px;color:#89839d;margin-top:4px}
+.project-visual{isolation:isolate}.project-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#ffffff12,transparent 42%,#00000016);pointer-events:none;z-index:0;transition:opacity .35s}.project-card:hover .project-visual:after{opacity:.45}
+.project-card,.service-card,.stat-card{will-change:transform}.service-card{opacity:0;transform:translateY(22px)}.service-card.motion-visible{opacity:1;transform:translateY(0);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.25,1)}
+.contact-panel{transition:transform .4s ease,box-shadow .4s ease}.contact-panel:hover{box-shadow:0 25px 70px #6d28d91c}
+@media(max-width:640px){.stats-section{gap:8px;padding:0 0 55px}.stat-card{padding:18px 7px 15px;border-radius:13px}.stat-number{font-size:32px}.stat-label{font-size:11px}.stat-card small{font-size:8px;line-height:1.5}}
+@media(prefers-reduced-motion:reduce){.stat-card,.service-card,.contact-panel{transition:none!important;transform:none!important}.service-card{opacity:1}}
