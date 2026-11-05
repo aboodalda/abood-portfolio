@@ -4,7 +4,7 @@ service firebase.storage {
     match /portfolio-projects/{projectId}/{fileName} {
       allow read: if true;
       allow write: if request.auth != null
-        && request.auth.uid == "REPLACE_WITH_ADMIN_UID"
+        && request.auth.uid == "S4edokMvRQRjk7DoJTtFwMUaK7E2"
         && request.resource.size < 5 * 1024 * 1024
         && request.resource.contentType.matches('image/(jpeg|png|webp)');
     }
