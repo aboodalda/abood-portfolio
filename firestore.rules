@@ -2,7 +2,7 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     function isAdmin() {
-      return request.auth != null && request.auth.uid == "REPLACE_WITH_ADMIN_UID";
+      return request.auth != null && request.auth.uid == "S4edokMvRQRjk7DoJTtFwMUaK7E2";
     }
     match /projects/{projectId} {
       allow read: if resource.data.published == true || isAdmin();
