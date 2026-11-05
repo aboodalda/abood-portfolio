@@ -199,3 +199,17 @@ main,.site-header,.section-wrap{min-width:0;max-width:100%}
 .project-card:hover .project-visual>img{transform:scale(1.045)}
 .button,.filter-btn,.project-link,.service-card{transition:all .28s cubic-bezier(.2,.7,.2,1)}
 @media(prefers-reduced-motion:reduce){.hero-copy,.hero-art,.floating-chip,.status-dot,.stat-card,.section-heading{animation:none!important}.project-visual:before{display:none}}
+
+
+/* More visible movement across the portfolio */
+.service-card,.project-card,.section-heading,.about-section,.contact-panel,.skill-pills{will-change:transform,opacity}
+.project-card{animation:portfolioFadeUp .7s both}
+.project-card:nth-child(2){animation-delay:.08s}.project-card:nth-child(3){animation-delay:.16s}
+.project-card:nth-child(4){animation-delay:.24s}.project-card:nth-child(5){animation-delay:.32s}.project-card:nth-child(6){animation-delay:.4s}
+.service-card{animation:portfolioFadeUp .75s both}
+.service-card:nth-child(2){animation-delay:.12s}.service-card:nth-child(3){animation-delay:.24s}
+.section-heading h2 .gradient-text{background-size:200% auto;animation:gradientDrift 5s ease infinite}
+@keyframes gradientDrift{0%,100%{background-position:0% center}50%{background-position:100% center}}
+.stat-card{position:relative;overflow:hidden}
+.stat-card:after{content:"";position:absolute;inset:-80% auto -80% -40%;width:35%;background:linear-gradient(90deg,transparent,#ffffff12,transparent);transform:rotate(22deg);animation:statShimmer 5s ease-in-out infinite;pointer-events:none}
+@keyframes statShimmer{0%,65%,100%{left:-45%}80%{left:120%}}
