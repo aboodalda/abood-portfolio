@@ -129,3 +129,20 @@ if ('IntersectionObserver' in window && mainNav) {
   document.querySelectorAll('main section[id]').forEach(section => navObserver.observe(section));
 }
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Animated counters and section entrance motion
+const statNumbers = document.querySelectorAll(".stat-number");
+const projectCount = document.getElementById("projectCount");
+if (projectCount) projectCount.dataset.count = String(document.querySelectorAll(".project-card").length);
+function animateCounter(node) {
+  const target = Number(node.dataset.count || 0), duration = 1500, start = performance.now();
+  const tick = now => { const progress = Math.min((now - start) / duration, 1); const eased = 1 - Math.pow(1 - progress, 4); node.textContent = String(Math.round(target * eased)); if (progress < 1) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+}
+if ("IntersectionObserver" in window) {
+  const statsObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { animateCounter(entry.target); statsObserver.unobserve(entry.target); } }), {threshold: .45});
+  statNumbers.forEach(node => statsObserver.observe(node));
+  const motionObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("motion-visible"); motionObserver.unobserve(entry.target); } }), {threshold: .12});
+  document.querySelectorAll(".service-card").forEach((node, index) => { node.style.transitionDelay = (index * 100) + "ms"; motionObserver.observe(node); });
+} else { statNumbers.forEach(node => node.textContent = node.dataset.count || "0"); document.querySelectorAll(".service-card").forEach(node => node.classList.add("motion-visible")); }
