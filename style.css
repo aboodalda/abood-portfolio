@@ -176,3 +176,26 @@ main,.site-header,.section-wrap{min-width:0;max-width:100%}
 .project-visual.has-image>img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:0}
 .project-visual .visual-arrow{z-index:3}
 @media(max-width:640px){.stats-section{gap:8px;margin-bottom:28px}.public-stat{padding:15px 6px;border-radius:12px}.public-stat>span:last-child{font-size:9px;text-align:center}.public-stat strong{font-size:27px}}
+
+
+/* Reliable visible motion layer */
+@keyframes portfolioFadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes portfolioFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes portfolioGlow{0%,100%{opacity:.45}50%{opacity:.9}}
+.hero-copy{animation:portfolioFadeUp .8s both}
+.hero-art{animation:portfolioFadeUp .95s .12s both}
+.floating-chip{animation:portfolioFloat 5s ease-in-out infinite}
+.chip-bottom{animation-delay:1.2s}
+.status-dot{animation:portfolioGlow 2s ease-in-out infinite}
+.stat-card{animation:portfolioFadeUp .7s both}
+.stat-card:nth-child(2){animation-delay:.12s}.stat-card:nth-child(3){animation-delay:.24s}
+.section-heading{animation:portfolioFadeUp .7s both}
+.project-card{transition:transform .35s ease,opacity .5s ease}
+.project-card:hover{transform:translateY(-6px)}
+.project-visual{overflow:hidden}
+.project-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 25%,#ffffff18 48%,transparent 70%);transform:translateX(-120%);transition:transform .7s;z-index:2;pointer-events:none}
+.project-card:hover .project-visual:before{transform:translateX(120%)}
+.project-visual>img{transition:transform .6s ease}
+.project-card:hover .project-visual>img{transform:scale(1.045)}
+.button,.filter-btn,.project-link,.service-card{transition:all .28s cubic-bezier(.2,.7,.2,1)}
+@media(prefers-reduced-motion:reduce){.hero-copy,.hero-art,.floating-chip,.status-dot,.stat-card,.section-heading{animation:none!important}.project-visual:before{display:none}}
